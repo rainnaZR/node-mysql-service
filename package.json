@@ -1,0 +1,57 @@
+{
+  "name": "node-mysql-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@koa/cors": "^2.2.3",
+    "ali-oss": "^6.1.1",
+    "axios": "^0.19.0",
+    "dayjs": "^1.8.14",
+    "debug": "^4.1.1",
+    "image-size": "^0.8.2",
+    "ioredis": "^4.10.0",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-mysql-session": "^0.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session-minimal": "^3.0.4",
+    "koa-static": "^5.0.0",
+    "multiparty": "^4.2.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^8.0.0",
+    "babel-eslint": "^10.0.2",
+    "chalk": "^2.4.2",
+    "commitlint": "^8.0.0",
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.4.1",
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "start": "DEBUG=auth,db NODE_ENV=alpha nodemon index.js",
+    "lint": "eslint --fix --ext .js .",
+    "pre-commit-notice": "echo Pre-commit checking... please wait && exit 0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit-notice && npm run lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "echo prepare-commit-msg hook not implemented yet."
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC"
+}
